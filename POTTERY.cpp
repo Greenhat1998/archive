@@ -15,8 +15,8 @@ int main()
     cin>>m;
     for(int i=0;i<m;i++)	cin>>b[i];
     int l=0, r=T, tmp=-1;
-    while (l<=r) 
-	{
+    while (l<=r)
+    {
         int mid=(l+r)/2;
         long long A=count(a,n,mid),	B=count(b,m,T-mid);
         if (A<B)	tmp=mid,	l=mid+1;
