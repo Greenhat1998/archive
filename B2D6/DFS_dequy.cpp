@@ -1,7 +1,6 @@
 #include <iostream>
 using namespace std;
-int T[1000], a[1000][1000], m, n, s, f;
-string res="";
+int T[1000], a[1000][1000], m, n, s, f, t, d[1000];
 void DFS(int u)
 {
 	cout<<u<<' ';
@@ -26,9 +25,11 @@ int main()
 	cout<<'\n';
 	while (f!=s)
 	{
-		res=to_string(f)+" "+res;
+		d[t]=f;
+		t++;
 		f=T[f];
-	}	
-	cout<<s<<' '<<res;
+	}
+	cout<<s<<' ';
+	for(int i=t-1;i>=0;i--) cout<<d[i]<<' ';
 	return 0;
 }
