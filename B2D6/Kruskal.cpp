@@ -12,8 +12,8 @@ int cmp(edge &X, edge &Y)
 }
 int root(int p) 
 {
-    if (T[p]==p)	return p;
-    else return T[p]=root(T[p]);
+    	if (T[p]==p)	return p;
+    	else return T[p]=root(T[p]);
 }
 void join(int p, int q)
 { 
@@ -21,17 +21,17 @@ void join(int p, int q)
 }
 int main() 
 {
-    cin>>n>>m;
-    for(int i=1;i<=n;i++)	T[i]=i;
-    for(int i=1;i<=m;i++)	cin>>a[i].u>>a[i].v>>a[i].w;
-    sort(a+1,a+m+1,cmp);
-    for(int i=1;i<=m;i++) 
-        if (root(a[i].u) != root(a[i].v)) 
+    	cin>>n>>m;
+    	for(int i=1;i<=n;i++)	T[i]=i;
+    	for(int i=1;i<=m;i++)	cin>>a[i].u>>a[i].v>>a[i].w;
+    	sort(a+1,a+m+1,cmp);
+    	for(int i=1;i<=m;i++) 
+        	if (root(a[i].u) != root(a[i].v)) 
 		{
-            join(a[i].u,a[i].v);
-            cout<<a[i].u<<' '<<a[i].v<<'\n';
-            res=res+a[i].w;
-        }
-    cout<<res;
-    return 0;
+            		join(a[i].u,a[i].v);
+            		cout<<a[i].u<<' '<<a[i].v<<'\n';
+            		res=res+a[i].w;
+        	}
+    	cout<<res;
+    	return 0;
 }
