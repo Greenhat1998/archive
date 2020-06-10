@@ -32,6 +32,7 @@ int main()
             		cout<<a[i].u<<' '<<a[i].v<<'\n';
             		res=res+a[i].w;
         	}
-    	cout<<res;
+    	if (res==0)	cout<<"Khong ton tai cay khung!";
+    	else cout<<"Trong so cua cay khung nho nhat: "<<res;
     	return 0;
 }
