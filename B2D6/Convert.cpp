@@ -46,6 +46,12 @@ void dsc_dsk(canh e[1000], vector<int> b[1000])		// danh sach canh thanh danh sa
 		b[v].push_back(u);
 	}
 }
+int cmp(canh &X, canh &Y)
+{
+	if (X.x<Y.x)	return 1;
+	if (X.x==Y.x && X.y<Y.y)	return 1;
+	return 0;
+}
 void dsk_dsc(vector<int> b[1000], canh e[1000])		// danh sach ke thanh danh sach canh
 {
 	canh tmp[1000];
@@ -57,6 +63,7 @@ void dsk_dsc(vector<int> b[1000], canh e[1000])		// danh sach ke thanh danh sach
 			tmp[cnt].x=min(i,b[i][j]);
 			tmp[cnt].y=max(i,b[i][j]);
 		}
+	sort(tmp+1,tmp+cnt+1,cmp);
 	for(int i=1;i<=cnt/2;i++)	e[i]=tmp[i*2];
 }
 int main()
